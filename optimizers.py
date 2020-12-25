@@ -7,9 +7,13 @@ Created on Sat Dec  7 21:08:17 2019
 
 
 class Optimizer():
-    def __init__(self, fct, lr, *args, **kwargs):
+    def __init__(self, acf, lr, *args, **kwargs):
         self.lr = lr
-        self.fct = fct
+        self.acf = acf #activation function
         
-    def get_grads(self, W):
-        return W*
+    def init_grads(self, W, X):
+        self.grads = self.acf.get_grads(W, X)
+
+    def one_step(self, W, X):
+    	self.init_grads(W, X)
+    	# self.acf
